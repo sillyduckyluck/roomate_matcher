@@ -6,8 +6,9 @@ const RoommateForm = () => {
   const [adjustedText, setAdjustedText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  /*
   const handleAdjustWithAI = () => {
-    setIsLoading(true);
+    setIsLoading(true);ë 
     // Simulate an API call
     setTimeout(() => {
       // Dummy API response
@@ -16,6 +17,8 @@ const RoommateForm = () => {
       setIsLoading(false);
     }, 2000); // Simulate a 2-second API call
   };
+  */
+ 
   const queryGPT = async (input) => {
     setIsLoading(true);
     const prompt = 'Please take the following text, and rearrange it so that it is more extraverted in nature: ' + paragraph;
