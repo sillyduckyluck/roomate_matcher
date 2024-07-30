@@ -21,9 +21,8 @@ const RoommateForm = () => {
  
   const queryGPT = async (input) => {
     setIsLoading(true);
-    const prompt = 'Please take the following text, and rearrange it so that it is more extraverted in nature: ' + paragraph;
+    const prompt = 'Please take the following text and re-word it subtly so that it reflects a more extraverted tone and style. The goal is to make the language more enthusiastic, social, and energetic while retaining the original meaning and content. Do not over-use exclamation points. Here is the text: ' + paragraph;
     const apiKey = process.env.REACT_APP_GPT_KEY;
-    //const apiKey = Netlify.env.get("REACT_APP_GPT_KEY")
     console.log(apiKey)
     const endpoint = 'https://api.openai.com/v1/chat/completions';
 
@@ -40,7 +39,7 @@ const RoommateForm = () => {
         messages: [{ role: "system", content: prompt + input}],
         //prompt: prompt + input,
         max_tokens: 400, // Adjust the number of tokens as needed
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o',
       }),
     });
 
@@ -65,9 +64,9 @@ const RoommateForm = () => {
       />
       <div className="adjust-section">
         <button onClick={queryGPT} disabled={isLoading}>
-          Adjust with AI
+          Improve with AI
         </button>
-        <p className="note">Users who adjust their paragraphs with text have been shown to be more accepted.</p>
+      
       </div>
       <div className="response-box">
         {isLoading ? <p>Loading...</p> : <p>{adjustedText}</p>}
