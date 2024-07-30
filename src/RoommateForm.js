@@ -23,7 +23,7 @@ const RoommateForm = () => {
     setIsLoading(true);
     const prompt = 'Please take the following text and re-word it subtly so that it reflects a more extraverted tone and style. The goal is to make the language more enthusiastic, social, and energetic while retaining the original meaning and content. Do not over-use exclamation points. Here is the text: ' + paragraph;
     const apiKey = process.env.REACT_APP_GPT_KEY;
-    console.log(apiKey)
+    //console.log(apiKey)
     const endpoint = 'https://api.openai.com/v1/chat/completions';
 
     console.log(prompt)
